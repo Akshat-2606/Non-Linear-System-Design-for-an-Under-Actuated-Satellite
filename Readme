@@ -1,0 +1,62 @@
+Attitude Control of an Underactuated Satellite Using Two Reaction Wheels
+Project Description
+This repository contains the implementation and simulation of a quaternion-based nonlinear controller (QBNC) for attitude control of an underactuated satellite equipped with only two reaction wheels, addressing the scenario of a failure in one of the three wheels. The controller leverages quaternion kinematics and a dynamic model based on Euler's rotational equations to achieve three-axis stabilization under zero total angular momentum conditions. The project includes simulations for both nonsaturated and saturated control systems, comparing the proposed QBNC with the standard nonlinear controller (SNLC) to evaluate performance metrics such as settling time, steady-state error, and torque efficiency.
+Features
+
+Dynamic Model: Implements Euler's rotational equations with a diagonal inertia matrix and reaction wheel dynamics.
+Quaternion Kinematics: Uses quaternions to represent satellite attitude, with derived kinematic equations for precise control.
+Nonlinear Controllers:
+Standard Nonlinear Controller (SNLC) with saturation to prevent excessive traction terms.
+Quaternion-Based Nonlinear Controller (QBNC) incorporating the derivative of the unactuated axis for improved response time.
+
+
+Simulations: Includes nonsaturated and saturated closed-loop system simulations with the UYS-1 nanosatellite inertia matrix, analyzing torque, quaternion components, and steady-state performance.
+Performance Comparison: Evaluates QBNC against SNLC, demonstrating reduced settling time and steady-state error with potential torque savings under saturation and noisy conditions.
+
+Installation
+
+Clone the repository:
+git clone https://github.com/yourusername/satellite-attitude-control.git
+
+
+Ensure you have Python 3.8+ installed.
+
+Install required dependencies:
+pip install numpy matplotlib scipy
+
+
+(Optional) For plotting simulation results, ensure matplotlib is configured for your environment.
+
+
+Usage
+
+Navigate to the project directory:
+cd satellite-attitude-control
+
+
+Run the simulation scripts:
+
+For nonsaturated simulations:
+python simulations/nonsaturated_simulation.py
+
+
+For saturated simulations:
+python simulations/saturated_simulation.py
+
+
+
+
+View results in the plots/ directory, including quaternion components, torque profiles, and integrated torque comparisons.
+
+
+Project Structure
+
+simulations/: Contains Python scripts for running nonsaturated and saturated simulations.
+models/: Includes dynamic and kinematic models for the satellite and controllers.
+plots/: Stores generated plots for quaternion components, torque, and performance metrics.
+docs/: Contains the original research document (TermReport.pdf) and additional references.
+
+Simulation Parameters
+
+Inertia Matrix: `I = diag(0.1521,.Concurrent users are not able to see this content.
+
